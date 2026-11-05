@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap')
+
+$primary: #0D9488
+$primary-hover: #0F766E
+$primary-light: #5EEAD4
+$primary-shadow-soft: rgba(13, 148, 136, 0.15)
+$primary-shadow-strong: rgba(13, 148, 136, 0.30)
+$primary-surface-soft: #F0FDFA
+$primary-border-soft: #CCFBF1
+$text-primary: #1E293B
+$text-secondary: #475569
+$text-light: #64748B
+$bg-secondary: #F8FAFC
+$white: #FFFFFF
+$border-subtle: #E2E8F0
+$success: #10B981
+$warning: #F59E0B
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+  background: $bg-secondary
+  color: $text-primary
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 24px 16px
+
+.container
+  max-width: 480px
+  width: 100%
+  margin: 0 auto
+
+.card
+  background: $white
+  border-radius: 20px
+  overflow: hidden
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08)
+
+.card-header
+  background: linear-gradient(135deg, $primary-hover 0%, $primary 55%, $primary-light 100%)
+  padding: 24px 20px
+  text-align: center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.logo-img
+  display: block
+  margin: 0 auto
+  max-width: 120px
+  height: auto
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.38)) drop-shadow(0 8px 18px rgba(15, 23, 42, 0.18))
+
+.card-body
+  position: relative
+  isolation: isolate
+  padding: 32px 24px
+
+  > *
+    position: relative
+    z-index: 1
+
+h1
+  color: $text-primary
+  font-size: 22px
+  font-weight: 700
+  text-align: center
+  margin-bottom: 8px
+  line-height: 1.3
+
+.text-gradient
+  background: linear-gradient(135deg, $primary, $primary-light) !important
+  -webkit-background-clip: text !important
+  -webkit-text-fill-color: transparent !important
+  background-clip: text !important
+
+.qr-instructions
+  text-align: center
+  font-size: 14px
+  font-weight: 600
+  color: $text-primary
+  margin: 24px 0 6px
+
+.qr-sub-instructions
+  text-align: center
+  font-size: 13px
+  color: $text-secondary
+  margin-bottom: 16px
+  line-height: 1.4
+
+.qr-section
+  text-align: center
+  margin: 20px 0
+  display: flex
+  justify-content: center
+
+.qr-code
+  max-width: 240px
+  width: 100%
+  height: auto
+  aspect-ratio: 1 / 1
+  border-radius: 12px
+  border: 3px solid $primary
+  padding: 12px
+  background: $white
+  box-shadow: 0 4px 12px $primary-shadow-soft
+  display: block
+
+.pix-code-container
+  margin: 24px 0
+  text-align: left
+
+.pix-code-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 8px
+  padding: 0 4px
+
+.pix-code-label
+  font-size: 11px
+  font-weight: 700
+  color: $text-light
+  text-transform: uppercase
+  letter-spacing: 0.05em
+
+.pix-code-hint
+  font-size: 11px
+  color: $primary
+  font-weight: 500
+
+.pix-code-box
+  width: 100%
+  background: $bg-secondary
+  border: 1.5px dashed $border-subtle
+  border-radius: 12px
+  padding: 12px 16px
+  font-family: 'JetBrains Mono', monospace
+  font-size: 11px
+  color: $text-secondary
+  word-break: break-all
+  user-select: all
+  cursor: pointer
+  line-height: 1.4
+  outline: none
+  transition: all 0.2s ease
+
+  &:hover
+    border-color: $primary
+    background: $primary-surface-soft
+    color: $primary-hover
+
+.btn
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 8px
+  width: 100%
+  padding: 16px 24px
+  border-radius: 12px
+  font-size: 16px
+  font-weight: 600
+  text-decoration: none
+  text-align: center
+  cursor: pointer
+  border: none
+  transition: all 0.2s
+
+.btn-primary
+  background: $primary
+  color: $white
+
+  &:hover
+    background: $primary-hover
+    transform: translateY(-1px)
+    box-shadow: 0 4px 12px $primary-shadow-strong
+
+  &:active
+    transform: translateY(0)
+
+.btn-secondary
+  background: $white
+  color: $primary
+  border: 2px solid $primary
+  margin-top: 12px
+
+  &:hover
+    background: $primary-surface-soft
+    transform: translateY(-1px)
+
+  &:active
+    transform: translateY(0)
+
+.info-link
+  text-align: center
+  margin: 16px 0
+
+  a
+    color: $primary
+    font-size: 13px
+    text-decoration: none
+    font-weight: 500
+
+    &:hover
+      text-decoration: underline
+
+.details-section
+  margin-top: 12px
+
+.detail-row
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 12px 0
+  border-bottom: 1px solid $border-subtle
+  gap: 16px
+
+  &:last-child
+    border-bottom: none
+
+.detail-label
+  font-size: 13px
+  font-weight: 600
+  color: $text-primary
+  min-width: 100px
+  flex-shrink: 0
+
+.detail-value
+  font-size: 13px
+  color: $text-secondary
+  text-align: right
+  flex: 1
+  word-break: break-all
+
+  &.mono
+    font-family: 'JetBrains Mono', monospace
+    font-size: 11.5px
+    user-select: all
+    cursor: pointer
+    padding: 4px 6px
+    border-radius: 6px
+    transition: all 0.15s ease
+
+    &:hover
+      color: $primary
+      background: $primary-surface-soft
+
+.verified-badge
+  display: inline-flex
+  align-items: center
+  gap: 4px
+  background: #DCFCE7
+  color: #166534
+  padding: 4px 10px
+  margin-left: 8px
+  border-radius: 12px
+  font-size: 11px
+  font-weight: 600
+  text-transform: uppercase
+
+.security-message
+  background: #FEF3C7
+  border-left: 4px solid $warning
+  border-radius: 8px
+  padding: 14px 16px
+  font-size: 13px
+  color: #92400E
+  margin-top: 24px
+  display: flex
+  gap: 10px
+  text-align: left
+  line-height: 1.45
+
+  .icon
+    flex-shrink: 0
+    font-size: 16px
+
+.footer
+  text-align: center
+  padding: 24px 20px
+
+.report-btn
+  color: $text-light
+  font-size: 13px
+  text-decoration: none
+  cursor: pointer
+  font-weight: 500
+
+  &:hover
+    color: $text-secondary
+    text-decoration: underline
+
+.disclaimer
+  font-size: 11px
+  color: $text-light
+  text-align: center
+  margin-top: 12px
+  line-height: 1.5
+  max-width: 400px
+  margin-left: auto
+  margin-right: auto

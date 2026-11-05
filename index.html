@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Pix Para Taruli Cosméticos</title>
+    <meta name="description" content="Efetue um pagamento Pix para Taruli Cosméticos.">
+    <meta name="keywords" content="Pix, Pagamento, LinksPix, Taruli Cosméticos, Transferência, QR Code">
+    <meta name="robots" content="noindex">
+    <meta property="og:title" content="Enviar Pix Para Taruli Cosméticos">
+    <meta property="og:description" content="Efetue um pagamento Pix para Taruli Cosméticos.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0D9488">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="public/logo.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Card Header with Logo -->
+            <div class="card-header">
+                <a href="https://linkspix.com.br" target="_blank" rel="noopener noreferrer" class="logo-link"
+                    title="LinksPix">
+                    <img src="public/logo.png" alt="Taruli Cosméticos" class="logo-img" width="120" height="120">
+                </a>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+                <!-- Title -->
+                <h1>
+                    Transfira para
+                    <br>
+                    <span class="text-gradient" id="payment-owner-name">Taruli Cosméticos</span>
+                </h1>
+
+                <!-- QR Code Instructions -->
+                <p class="qr-instructions">Use o QR Code ou copie o Código abaixo para pagar</p>
+                <p class="qr-sub-instructions">Abra o app do seu banco, escaneie a imagem ou cole o código copiado</p>
+
+                <!-- QR Code -->
+                <div class="qr-section" id="payment-qr-slot">
+                    <img src="public/pix-image.png" alt="QR Code Pix" class="qr-code" width="240" height="240">
+                </div>
+
+                <!-- Pix Code Box (Copia e Cola) -->
+                <div class="pix-code-container">
+                    <div class="pix-code-header">
+                        <span class="pix-code-label">Código Pix Copia e Cola</span>
+                        <span class="pix-code-hint">Toque para copiar</span>
+                    </div>
+                    <div class="pix-code-box" id="pix-code-display" role="button" tabindex="0"
+                        title="Clique para copiar">
+                        00020126580014br.gov.bcb.pix013624daad0b-0d7e-47f6-be85-cd5c3d4ba0625204000053039865802BR5925TARULI
+                        COSMETICOS SOCIEDA6014RIO DE JANEIRO62070503***630415AC</div>
+                </div>
+
+                <!-- Primary Copy Button -->
+                <button class="btn btn-primary" id="copy-btn" type="button" onclick="copyPixPayload()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Copiar código Pix</span>
+                </button>
+
+                <!-- Details Section -->
+                <div class="details-section" id="details-section">
+                    <div class="detail-row">
+                        <div class="detail-label">Tipo de Chave</div>
+                        <div class="detail-value">
+                            <span id="payment-key-type-label">Chave Aleatória</span>
+                            <span class="verified-badge" id="payment-verified-badge">🛡️ verificado</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">Nome</div>
+                        <div class="detail-value" id="payment-owner-name-detail">TARULI COSMETICOS</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">Chave Pix</div>
+                        <div class="detail-value mono" id="payment-pix-key" role="button" tabindex="0"
+                            title="Clique para copiar a chave" onclick="copyPixKey()">41.200.471/0001-20</div>
+                    </div>
+                </div>
+
+                <!-- Secondary Button: Copy Key -->
+                <button class="btn btn-secondary" id="copy-key-btn" type="button" onclick="copyPixKey()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 2l-2 2m-1-1l-3 3m1 1l-2 2m-1-1l-2 2m-1-1l-2 2m0 0A7.5 7.5 0 1 0 6 18l6-6"></path>
+                    </svg>
+                    <span>Copiar Chave CNPJ</span>
+                </button>
+
+                <!-- Security Warning -->
+                <div class="security-message">
+                    <span class="icon">⚠️</span>
+                    <span>Lembre-se de conferir os dados do recebedor e o valor <b>antes de realizar o pagamento</b> no
+                        app do seu banco.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="disclaimer">
+                Em caso de problema, fale diretamente com o seu(a) atendente.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
