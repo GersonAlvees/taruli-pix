@@ -115,13 +115,22 @@
     }
   }
 
+  function getPixKey() {
+    const el = document.getElementById("payment-pix-key");
+    if (el && el.textContent.trim()) {
+      return el.textContent.trim();
+    }
+    return "41.200.471/0001-20";
+  }
+
   window.copyPixPayload = function () {
     selectVisiblePixCode();
     handleCopy(PIX_PAYLOAD, "Código Pix copiado...\nCole no app do seu banco.");
   };
 
   window.copyPixKey = function () {
-    handleCopy(PIX_KEY, "Chave Pix copiada...\nCole no app do seu banco.");
+    const key = getPixKey();
+    handleCopy(key, "Chave Pix copiada...\nCole no app do seu banco.");
   };
 
   function init() {
